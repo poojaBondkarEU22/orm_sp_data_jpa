@@ -1,13 +1,8 @@
 package com.orm.onetomany.dto.mapper;
 
 import com.orm.onetomany.dto.CourseDTO;
-import com.orm.onetomany.dto.InstructorDTO;
 import com.orm.onetomany.entity.Course;
 import org.mapstruct.*;
-import org.mapstruct.factory.Mappers;
-
-import java.sql.SQLOutput;
-import java.util.Set;
 
 @Mapper(componentModel = "spring")
 @DecoratedWith(CourseMapperDecorator.class)
@@ -19,6 +14,7 @@ public interface CourseMapper {
 
 
     @Mapping(target = "instructor" , source = "instructorDTO")
+    @Mapping(target = "reviews" , source = "reviews")
     Course toEntity(CourseDTO courseDTO);
 
 

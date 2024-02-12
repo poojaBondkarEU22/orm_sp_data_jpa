@@ -3,6 +3,8 @@ package com.orm.onetomany.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tbl_course")
 @Getter
@@ -24,6 +26,9 @@ public class Course {
     @JoinColumn(name = "instructor_id")
     private Instructor instructor;
 
+    @OneToMany(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
+    private List<Review> reviews;
 
 
     @Override

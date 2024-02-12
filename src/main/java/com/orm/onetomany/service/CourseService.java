@@ -5,7 +5,6 @@ import com.orm.onetomany.dto.mapper.CourseMapper;
 
 import com.orm.onetomany.entity.Course;
 
-import com.orm.onetomany.entity.Instructor;
 import com.orm.onetomany.exception.course.CourseNotFoundException;
 import com.orm.onetomany.exception.course.CourseTitleCannotChangeException;
 import com.orm.onetomany.repository.CourseRepository;
@@ -16,8 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -90,4 +87,6 @@ public class CourseService {
     public List<CourseDTO> findAllCoursesForInstructor(Long instructorId) {
         return getAllCourses().stream().filter(courseDTO -> courseDTO.getInstructorId().equals(instructorId)).toList();
     }
+
+
 }

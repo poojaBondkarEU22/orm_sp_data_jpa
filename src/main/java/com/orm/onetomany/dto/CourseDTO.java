@@ -1,12 +1,12 @@
 package com.orm.onetomany.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.orm.onetomany.entity.Instructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -20,7 +20,6 @@ public class CourseDTO {
     private Long instructorId;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private InstructorDTO instructorDTO;
-
-
+    private List<ReviewDTO> reviews;
 
 }
