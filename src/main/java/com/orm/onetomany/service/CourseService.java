@@ -75,6 +75,10 @@ public class CourseService {
         if (course.getInstructor() != null) {
             course.getInstructor().removeCourseFromInstructor(course);
         }
+
+        if(course.getStudents() != null){
+            course.getStudents().forEach(student -> student.removeCourse(course));
+        }
         courseRepository.delete(course);
         return "Course deleted successfully";
     }

@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 @Log4j2
 public abstract class CourseMapperDecorator implements CourseMapper{
 
-    @Autowired
-    @Qualifier("delegate")
-    private CourseMapper delegate;
+        @Autowired
+        @Qualifier("delegate")
+        private CourseMapper delegate;
 
     @Autowired
     private ReviewMapper reviewMapper;
@@ -30,6 +30,8 @@ public abstract class CourseMapperDecorator implements CourseMapper{
         if(course.getReviews() != null) {
             courseDTO.setReviews(course.getReviews().stream().map(reviewMapper::toDTO).toList());
         }
+
+
         return courseDTO;
     }
 }

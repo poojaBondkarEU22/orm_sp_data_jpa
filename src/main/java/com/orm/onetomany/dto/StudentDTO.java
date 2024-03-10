@@ -12,15 +12,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CourseDTO {
+public class StudentDTO {
 
     private Long id;
-    private String title;
-    private String description;
-    private Long instructorId;
+    private String firstName;
+    private String lastName;
+    private String email;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private InstructorDTO instructorDTO;
-    private List<ReviewDTO> reviews;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<StudentDTO> students;
+    private List<CourseDTO> courses;
+    private List<Long> courseIds;
 }

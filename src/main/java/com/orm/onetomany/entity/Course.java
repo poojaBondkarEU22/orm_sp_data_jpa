@@ -3,6 +3,7 @@ package com.orm.onetomany.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,25 @@ public class Course {
     @JoinColumn(name = "course_id")
     private List<Review> reviews;
 
+
+    @ManyToMany(fetch = FetchType.LAZY , cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "tbl_course_student",
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = { @JoinColumn(name = "student_id")}
+    )
+    private List<Student> students;
+
+    public void addStudent(Student student) {
+        if(students == null) {
+            students = new ArrayList<>();
+        }
+        students.add(student);
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
 
     @Override
     public String toString() {
