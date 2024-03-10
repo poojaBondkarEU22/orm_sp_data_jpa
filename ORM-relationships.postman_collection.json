@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "18a897b6-1336-4a68-878d-52d512ad9425",
+		"name": "ORM-relationships",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19178135"
+	},
+	"item": [
+		{
+			"name": "getAllInstructors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "createNewInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Pooja\",\n    \"lastName\" : \"Bondkar\",\n    \"email\" : \"pb@gmail.com\",\n    \"courses\" : [\n        {\n            \"title\" : \"Java\",\n            \"description\" : \"Java\"\n        },\n        {\n            \"title\" : \"REST\",\n            \"description\" : \"REST\"\n        }\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "getInstructorById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor/1"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCourses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "createNewCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Java\",\n    \"description\" : \"Java\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteInstructorById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor/1"
+			},
+			"response": []
+		},
+		{
+			"name": "assignNewCourseToExistingInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor/1/course/3/assign"
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/courses/3"
+			},
+			"response": []
+		},
+		{
+			"name": "removeCourseFromInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor/1/course/2/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "createInstructorWithoutCourses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Pravina\",\n    \"lastName\" : \"Bondkar\",\n    \"email\" : \"pcb@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "updateInstructorData",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n    \"firstName\" : \"Pooja\",\n    \"lastName\" : \"Bondkar\",\n    \"email\" : \"pbb@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "removeCourseFromInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8086/api/v1/instructor/1/course/3/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "createCourseWithInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Scrum\",\n    \"description\" : \"Scrum\",\n    \"instructorDTO\" : {\n        \"firstName\" : \"Alex\",\n        \"lastName\" : \"Mullar\",\n        \"email\" : \"test5@gmail.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCourseById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8086/api/v1/courses/1"
+			},
+			"response": []
+		},
+		{
+			"name": "updateInstructor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"firstName\" : \"Pooja\",\n    \"lastName\" : \"Bondkar\",\n    \"email\" : \"tt@gmail.com\",\n    \"courses\" : [\n        {\n            \"title\" : \"Kafka\",\n            \"description\" : \"Kafka\"\n        }\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "updateCourse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n        \"title\": \"Microservices\",\n    \"description\" : \"Microservices by javabrains22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCoursesForInstructor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/courses/instructor/1"
+			},
+			"response": []
+		},
+		{
+			"name": "createCourseWithReviesAndWithoutInstructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Microservices\",\n    \"description\" : \"Microservices\",\n    \"reviews\" : [\n        {\n            \"comment\" : \"Best course by java brains.\"\n        },\n        {\n            \"comment\" : \"Best course by java techie.\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "createCourseWithInstructorAndReviews",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"QA\",\n    \"description\" : \"QA\",\n    \"instructorDTO\" : {\n        \"firstName\" : \"Alice\",\n        \"lastName\" : \"alice\",\n        \"email\" : \"aa@gmail.com\"\n    },\n    \"reviews\" : [\n        {\n            \"comment\" : \"Contented course.\"\n        },\n        {\n            \"comment\" : \"Well explained.\"\n        },\n        {\n            \"comment\" : \"Need more courses from you.\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "createStudentWithoutCourses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Purva\",\n    \"lastName\" : \"Desai\",\n    \"email\" : \"pn@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/students/"
+			},
+			"response": []
+		},
+		{
+			"name": "addNewCourseToStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8086/api/v1/students/2/courses/2/assign"
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/students/2"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCoursesOfStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/students/1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudentsOfCourse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8086/api/v1/courses/1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "removeStudentFromCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8086/api/v1/students/2/courses/2/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStudentById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8086/api/v1/students/2"
+			},
+			"response": []
+		},
+		{
+			"name": "updateStudentDetails",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"firstName\": \"Pravina\",\n    \"lastName\": \"Bondkar-Desai-test\",\n    \"email\": \"pbd@gmail.com\",\n    \"courseIds\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8086/api/v1/students"
+			},
+			"response": []
+		}
+	]
+}
